@@ -1,7 +1,5 @@
 # EKS cluster backup and restor using Velero
 
-**Backup-and-Restore-EKS-using-Velero**
-
 **Install jq:**
 
 yum install jq -y
