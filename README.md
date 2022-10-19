@@ -11,21 +11,21 @@ export AWS_REGION=us-east-2
 **Create an S3 bucket to backup cluster:**
 
 
-export VELERO_BUCKET=$(aws s3api create-bucket \
---bucket eksworkshop-backup-$(date +%s)-$RANDOM \
---region $AWS_REGION \
---create-bucket-configuration LocationConstraint=$AWS_REGION \
---| jq -r '.Location' \
---| cut -d'/' -f3 \
---| cut -d'.' -f1)
+    export VELERO_BUCKET=$(aws s3api create-bucket \
+    --bucket eksworkshop-backup-$(date +%s)-$RANDOM \
+    --region $AWS_REGION \
+    --create-bucket-configuration LocationConstraint=$AWS_REGION \
+    --| jq -r '.Location' \
+    --| cut -d'/' -f3 \
+    --| cut -d'.' -f1)
 
 For us-east-1, use the command below to create S3 bucket.
 
-export VELERO_BUCKET=$(aws s3api create-bucket \
---bucket eksworkshop-backup-$(date +%s)-$RANDOM \
---region $AWS_REGION \
---| jq -r '.Location' \
---| tr -d /)  
+    export VELERO_BUCKET=$(aws s3api create-bucket \
+    --bucket eksworkshop-backup-$(date +%s)-$RANDOM \
+    --region $AWS_REGION \
+    --| jq -r '.Location' \
+    --| tr -d /)  
 
 Now, let’s save the VELERO_BUCKET environment variable into the bash_profile
 
