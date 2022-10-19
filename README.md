@@ -201,6 +201,6 @@ If we run same command without "--include-namespace" filter, it will restore all
 
 velero restore create --from-backup demo1
 
-![Uploading image.png…]()
+<img width="811" alt="image" src="https://user-images.githubusercontent.com/68885738/196748644-c04ce1c4-a75e-49a6-b322-a330a90dc27d.png">
 
-
+Reference: https://velero.io/docs/v1.4/resource-filtering/ 
