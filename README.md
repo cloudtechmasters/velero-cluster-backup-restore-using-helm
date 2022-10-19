@@ -2,14 +2,13 @@
 
 **Install jq:**
 
-yum install jq -y
+    yum install jq -y
 
 **Provide AWS_REGION=**
 
-export AWS_REGION=us-east-2
+    export AWS_REGION=us-east-2
 
 **Create an S3 bucket to backup cluster:**
-
 
     export VELERO_BUCKET=$(aws s3api create-bucket \
     --bucket eksworkshop-backup-$(date +%s)-$RANDOM \
@@ -29,7 +28,7 @@ For us-east-1, use the command below to create S3 bucket.
 
 Now, let’s save the VELERO_BUCKET environment variable into the bash_profile
 
-echo "export VELERO_BUCKET=${VELERO_BUCKET}" | tee -a ~/.bash_profile
+    echo "export VELERO_BUCKET=${VELERO_BUCKET}" | tee -a ~/.bash_profile
 
 **Create policies to give velero the necessary permissions:**
 
@@ -99,7 +98,7 @@ The --namespace=velero flag ensures that only an application running in the vele
   
 **Install Velero on EKS:** 
 
-helm repo add vmware-tanzu https://vmware-tanzu.github.io/helm-charts
+    helm repo add vmware-tanzu https://vmware-tanzu.github.io/helm-charts
 
     cat > values.yaml <<EOF
     configuration:
